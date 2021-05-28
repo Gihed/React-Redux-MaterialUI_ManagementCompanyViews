@@ -18,6 +18,7 @@ import format from 'string-format';
 import PageBase from './PageBase';
 import {getCompanies} from '../actions';
 import { compose } from "redux";
+//import {getContacts} from '../actions'
 
 
 
@@ -77,9 +78,11 @@ export class ProjectInfiList extends React.Component {
 //function start 'init' the project
 componentDidMount(){      
   this.props.getCompanies();
+  // this.props.getContacts();
+
 }
 
-
+/***********/
 
   deleteProjectInfo(id) {
     this.setState({ deleteRecord: true, id: id });
@@ -178,7 +181,7 @@ ProjectInfiList.propTypes = {
 const mapStateToProps = state => {
   console.log("state: ", state);
   return{
-  // companies: state.companies.companies  //props
+  companies: state.companies.companies  //props
   };
 };
 const mapDispatchToProps = dispatch => {

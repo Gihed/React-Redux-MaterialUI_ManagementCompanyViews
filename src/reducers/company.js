@@ -9,9 +9,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case COMPANY_LIST:
+            console.log("actions: ",action)
         return{
             ... state,
-            companies:actions.listcompany
+            companies: action.listcompany
         };
     default:
         return state;
