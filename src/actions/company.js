@@ -33,6 +33,20 @@ export const addCompany = (data) => {
     }
 }
 
+export const deleteCompany = (id) => {
+    return dispatch => {
+        axios
+            .delete("http://localhost:1337/company/remove/"+id)
+            .then( response => {
+                console.log("response : ",response.data);
+                dispatch(getCompanies())
+            })
+            .catch(error => {
+                console.log("error : ",error);
+            })
+    }
+}
+
 export const setCompaniesList = value =>{
     return{
         type: COMPANY_LIST,

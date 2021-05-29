@@ -16,7 +16,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import AddIcon from '@material-ui/icons/Add'
 import format from 'string-format';
 import PageBase from './PageBase';
-import {getCompanies} from '../actions';
+import {getCompanies,deleteCompany} from '../actions';
 import { compose } from "redux";
 //import {getContacts} from '../actions'
 
@@ -93,8 +93,8 @@ componentDidMount(){
   deleteAfterConfirmation(deleteConfirmed) {
     this.setState({ deleteRecord: false });
     if (deleteConfirmed) {
-      /* let selectedid =  this.state.id
-        Create and call deleteProjectInfo action */
+      let selectedid =  this.state.id;
+        this.props.deleteCompany(selectedid);
         this.showNotification("Deleted!! Create and call deleteProjectInfo action");
     }
     this.setState({ id: '' });
@@ -185,8 +185,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    getCompanies: () => dispatch(getCompanies())
-    //deleteCompany : (id) => dispatch(deleteCompany(id)),
+    getCompanies: () => dispatch(getCompanies()),
+    deleteCompany : (id) => dispatch(deleteCompany(id)),
   };
 };
 export default compose(

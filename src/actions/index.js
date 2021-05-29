@@ -1,4 +1,4 @@
 //collect all the actions
 
-export{getCompanies, addCompany} from "./company";
+export{getCompanies, addCompany,deleteCompany} from "./company";
  

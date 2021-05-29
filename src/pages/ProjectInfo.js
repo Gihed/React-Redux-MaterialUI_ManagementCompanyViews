@@ -38,7 +38,7 @@ class ProjectInfo extends React.Component {
 
  
   handleSubmit(){
-    
+
     console.log("name : ",this.state.name)
     console.log("address : ",this.state.address)
     console.log("zipcode : ",this.state.zipCode)
@@ -46,7 +46,7 @@ class ProjectInfo extends React.Component {
     let data = {
       name: this.state.name,
       address: this.state.address,
-      zipCode: this.state.zipCode,
+      zipcode: this.state.zipCode,
       country: this.state.country,
     }
     console.log("data",data)
