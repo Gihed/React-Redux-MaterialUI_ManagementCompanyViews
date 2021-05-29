@@ -132,7 +132,6 @@ componentDidMount(){
               <CustomTableCell>address</CustomTableCell>
               <CustomTableCell>country</CustomTableCell>
               <CustomTableCell>zipcode</CustomTableCell>
-              <CustomTableCell>Type</CustomTableCell>
               <CustomTableCell>Edit</CustomTableCell>
               <CustomTableCell>Delete</CustomTableCell>
             </TableRow>

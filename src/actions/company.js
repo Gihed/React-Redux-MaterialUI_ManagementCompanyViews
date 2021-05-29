@@ -19,6 +19,19 @@ export const getCompanies = () => {  // public function when adding export
         })
     }
 }
+export const addCompany = (data) => {
+    return dispatch => {
+        axios
+        .post("http://localhost:1337/company/create",data)
+        .then(response => {
+            console.log("response : ",response.data);
+            dispatch(getCompanies())
+        })
+        .catch(error => {
+            console.log("error : ",error);
+        })
+    }
+}
 
 export const setCompaniesList = value =>{
     return{
@@ -26,3 +39,4 @@ export const setCompaniesList = value =>{
         listcompany: value
     };
 };
+
